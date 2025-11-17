@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <script src = "JSDef.js" type = "text/javascript"></script>
+        <script src = "special-report.js" type = "text/javascript"></script>
+        <script type = "text/javascript">
+            htmlDefHeader();
+        </script>
+    </head>
+    <body>
+        <style>
+            .all{
+                display: block;
+                position: relative;
+                margin: 0;
+            }
+                .circleName{
+                    display:block;
+                    position: relative;
+                    margin: 3vh 0 5vh 3vh;
+                    padding: 0;
+                    font-size: 10vh;
+                }
+                /*作品一覧*/
+                /*1作品ごと*/
+                .info{
+                    display: inline-block;
+                    position: relative;
+                    margin: 0;
+                    padding: 0;
+                }
+                    /*タイトル行*/
+                    .infoA{
+                        display: inline-block;
+                        position: relative;
+                        margin: 0 0 0 8vh;
+                        padding: 0;
+                    }
+                    .infoAelement{
+                        display: inline-block;
+                        position: relative;
+                        margin: 0;
+                        padding: 0;
+                    }
+                        .title{
+                            font-size: 4vh;
+                        }
+                    /*灰色小文字ステータス行*/
+                    .infoB{
+                        display: inline-block;
+                        position: relative;
+                        margin: 0 0 0 8vh;
+                        padding: 0;
+                    }
+                    .infoBelement{
+                        display: inline-block;
+                        position: relative;
+                        margin: 0 2em 0 0;
+                        padding: 0;
+                        font-size: 1.8vh;
+                        opacity: 0.2;
+                    }
+                    /*説明文*/
+                    .infoC{
+                        display: inline-block;
+                        position: relative;
+                        margin: 0 0 0 12vh;
+                        padding: 0;
+                    }
+                    .infoCelement{
+                        display: inline-block;
+                        position: relative;
+                        margin: 0 2em 4vh 0;
+                        padding: 0;
+                        font-size: 2.2vh;
+                        opacity: 0.8;
+                    }
+        </style>
+
+        <div id="all">
+            <div class="circleName">
+                TITLE LIST
+            </div>
+        </div>
+
+        <script>
+            const infoArrayClassName = [
+                ["infoA", "infoAelement title"],
+                ["infoB", "infoBelement code"],
+                ["infoB", "infoBelement kind"],
+                ["infoB", "infoBelement status-public"],
+                ["infoB", "infoBelement date"],
+                ["infoB", "infoBelement status-development"],
+                ["infoC", "infoCelement explain"],
+            ];
+            const infoArray = [
+                [
+                    "Black box",
+                    "AS-00",
+                    "ゲーム",
+                    "非公開",
+                    "20230706 ~ 20230829",
+                    "開発終了",
+                    "",
+                ],[
+                    "幻のピアス",
+                    "AS-01 / 20240802B",
+                    "ゲーム",
+                    "非公開",
+                    "20240802 ~ ",
+                    "開発中",
+                    "コミティア155にて頒布予定<br>落選した場合は未定",
+                ],[
+                    "ホームページ(仮称)",
+                    "AS-02",
+                    "ホームページ",
+                    "公開中",
+                    "20250502 ~ ",
+                    "随時更新",
+                    "",
+                ],[
+                    "while: alive",
+                    "AS-03 / 20250709A",
+                    "ゲーム",
+                    "限定公開済み",
+                    "20250709 ~ ",
+                    "再開発中",
+                    "インターネット上では公開されていません",
+                ],[
+                    "be4 シリーズ (仮称)",
+                    "AS-04 / be*",
+                    "圧縮ソフト",
+                    "非公開",
+                    "20230706 ~ 20230829",
+                    "一時中断",
+                    "",
+                ],
+            ];
+
+            for(let i = 0, j, parentClassName; i < infoArray.length; i++){
+                /*作品ごとにinfoで囲む*/
+                document.getElementById("all").innerHTML += `<div class="info">`;
+                for(j = 0, parentClassName = ""; j < infoArray[i].length; j++){
+                    /*infoArrayClassName[*][0]が変わるごとに新しいその名前で囲む*/
+                    if(parentClassName != infoArrayClassName[j][0]){
+                        if(parentClassName != ""){
+                            document.getElementById("all").innerHTML += `</div><br>`;
+                        }
+                        document.getElementById("all").innerHTML += `<div class="${infoArrayClassName[j][0]}">`;
+                        parentClassName = infoArrayClassName[j][0];
+                    }
+                    document.getElementById("all").innerHTML += `
+                    <div class="${infoArrayClassName[j][1]}">${infoArray[i][j]}</div>
+                    `;
+                }
+
+                if(parentClassName != ""){
+                    document.getElementById("all").innerHTML += `</div>`;
+                }
+                document.getElementById("all").innerHTML += `</div><br>`;
+            }
+
+            //<!--フッター-->
+            htmlDefFooter();
+        </script>
+    </body>
+</html>
