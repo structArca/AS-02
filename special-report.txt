@@ -1,4 +1,5 @@
 20250225,活動開始,活動を開始しました。,,https://structarca.github.io/AS-02/common/icon.png
 20250302,共通ライセンスを公開,,https://structarca.github.io/AS-02/common-license.html
 20251117,タイトルリストを公開,,https://structarca.github.io/AS-02/title-list.html
+20251129,灰色の少年(仮題)を公開,,https://www.nicovideo.jp/watch/sm45675380
 余白行(消さないでね)     規定: UTF-8, LF(CRなし),
