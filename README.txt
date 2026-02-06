@@ -1,1 +1,1 @@
-サイトurl: https://structarca.github.io/AS-02/title-list.html
+サイトurl: https://structarca.github.io/AS-02/
