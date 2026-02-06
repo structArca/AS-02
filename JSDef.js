@@ -1,7 +1,7 @@
 
 /*リンク*/
 function LINK_GITHUB(link){
-    return "https://structarca.github.io/website/" + link;
+    return "https://structarca.github.io/AS-02/" + link;
 };
 
 /*エラーテキスト変換*/
